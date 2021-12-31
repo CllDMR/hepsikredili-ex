@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "web-customer": "apps/web-customer",
+    "web-customer-admin": "apps/web-customer-admin",
+    "web-customer-admin-e2e": "apps/web-customer-admin-e2e",
     "web-customer-e2e": "apps/web-customer-e2e"
   }
 }
