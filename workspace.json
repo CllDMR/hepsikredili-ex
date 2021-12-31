@@ -4,6 +4,8 @@
     "web-customer": "apps/web-customer",
     "web-customer-admin": "apps/web-customer-admin",
     "web-customer-admin-e2e": "apps/web-customer-admin-e2e",
-    "web-customer-e2e": "apps/web-customer-e2e"
+    "web-customer-e2e": "apps/web-customer-e2e",
+    "web-inhouse": "apps/web-inhouse",
+    "web-inhouse-e2e": "apps/web-inhouse-e2e"
   }
 }
