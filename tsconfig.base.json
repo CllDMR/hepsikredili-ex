@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@hepsikredili/ui/admin": ["libs/ui/admin/src/index.ts"],
+      "@hepsikredili/ui/shared": ["libs/ui/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
