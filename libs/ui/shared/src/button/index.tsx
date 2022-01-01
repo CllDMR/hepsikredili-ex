@@ -13,9 +13,7 @@ export type ButtonProps =
   | ButtonOutlinedProps
   | ButtonFlatProps;
 
-export const Button: FC<ButtonProps> = (
-  props = { variant: 'outlined', title: '' }
-) => {
+export const Button: FC<ButtonProps> = (props) => {
   switch (props.variant) {
     case 'contained':
       return <ButtonContained {...props} />;
@@ -24,8 +22,9 @@ export const Button: FC<ButtonProps> = (
     case 'outlined':
       return <ButtonOutlined {...props} />;
 
-    default:
+    default: {
       const ex_: never = props;
       return ex_;
+    }
   }
 };

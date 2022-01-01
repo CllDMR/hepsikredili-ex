@@ -7,9 +7,9 @@ export interface ButtonContainedProps extends ButtonBaseProps {
 }
 
 export const ButtonContained: FC<ButtonContainedProps> = (props) => (
-  <div>
-    <h1>Welcome to ButtonContained!</h1>
-  </div>
+  <button className="bg-red-900 border-8 border-green-800 ">
+    <span>{props.title}</span>
+  </button>
 );
 
 export default ButtonContained;
