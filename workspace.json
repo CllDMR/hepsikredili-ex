@@ -1,7 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "ui-admin": "libs/ui/admin",
     "ui-shared": "libs/ui/shared",
     "web-customer": "apps/web-customer",
     "web-customer-admin": "apps/web-customer-admin",
