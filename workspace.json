@@ -2,6 +2,9 @@
   "version": 2,
   "projects": {
     "ui-shared": "libs/ui/shared",
+    "ui-web-customer": "libs/ui/web-customer",
+    "ui-web-customer-admin": "libs/ui/web-customer-admin",
+    "ui-web-inhouse": "libs/ui/web-inhouse",
     "web-customer": "apps/web-customer",
     "web-customer-admin": "apps/web-customer-admin",
     "web-customer-admin-e2e": "apps/web-customer-admin-e2e",

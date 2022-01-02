@@ -1,0 +1,23 @@
+{
+  "root": "libs/ui/web-customer",
+  "sourceRoot": "libs/ui/web-customer/src",
+  "projectType": "library",
+  "tags": ["scope:web-customer", "type:ui"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui/web-customer/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/web-customer"],
+      "options": {
+        "jestConfig": "libs/ui/web-customer/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

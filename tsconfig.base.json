@@ -15,7 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hepsikredili/ui/shared": ["libs/ui/shared/src/index.ts"]
+      "@hepsikredili/ui/shared": ["libs/ui/shared/src/index.ts"],
+      "@hepsikredili/ui/web-customer": ["libs/ui/web-customer/src/index.ts"],
+      "@hepsikredili/ui/web-customer-admin": [
+        "libs/ui/web-customer-admin/src/index.ts"
+      ],
+      "@hepsikredili/ui/web-inhouse": ["libs/ui/web-inhouse/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
