@@ -23,6 +23,6 @@
       }
     }
   },
-  "tags": [],
+  "tags": ["scope:web-inhouse-e2e", "type:app-e2e"],
   "implicitDependencies": ["web-inhouse"]
 }

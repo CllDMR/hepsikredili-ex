@@ -50,5 +50,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["scope:web-customer-admin", "type:app"]
 }

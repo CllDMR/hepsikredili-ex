@@ -2,7 +2,7 @@
   "root": "libs/ui/admin",
   "sourceRoot": "libs/ui/admin/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["scope:admin", "type:ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
