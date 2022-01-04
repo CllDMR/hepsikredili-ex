@@ -5,11 +5,9 @@ import './index.css';
 const CustomApp = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>
-      <title>Welcome to web-customer!</title>
+      <title>Hepsikredili.com</title>
     </Head>
-    <main className="">
-      <Component {...pageProps} />
-    </main>
+    <Component {...pageProps} />
   </>
 );
 
