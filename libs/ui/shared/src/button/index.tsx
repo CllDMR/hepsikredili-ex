@@ -1,10 +1,11 @@
-import { FC, HTMLProps } from 'react';
+import { FC, forwardRef, HTMLProps } from 'react';
 import { ButtonContained, ButtonContainedProps } from './contained/contained';
 import { ButtonFlat, ButtonFlatProps } from './flat/flat';
 import { ButtonOutlined, ButtonOutlinedProps } from './outlined/outlined';
 
 export type ButtonBaseProps = {
   title: string;
+  fullWidth?: boolean;
   onClick?: HTMLProps<HTMLButtonElement>['onClick'];
 };
 
@@ -13,10 +14,13 @@ export type ButtonProps =
   | ButtonOutlinedProps
   | ButtonFlatProps;
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = forwardRef<
+  HTMLButtonElement,
+  ButtonProps
+>((props, ref) => {
   switch (props.variant) {
     case 'contained':
-      return <ButtonContained {...props} />;
+      return <ButtonContained {...props} buttonRef={ref} />;
     case 'flat':
       return <ButtonFlat {...props} />;
     case 'outlined':
@@ -27,4 +31,4 @@ export const Button: FC<ButtonProps> = (props) => {
       return ex_;
     }
   }
-};
+});

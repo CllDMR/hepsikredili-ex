@@ -18,8 +18,10 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "@angular-devkit/schematics": "^13.1.2",
     "@nrwl/cli": "13.4.1",
     "@nrwl/cypress": "13.4.1",
+    "@nrwl/devkit": "13.4.1",
     "@nrwl/eslint-plugin-nx": "13.4.1",
     "@nrwl/jest": "13.4.1",
     "@nrwl/linter": "13.4.1",

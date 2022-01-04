@@ -1,0 +1,23 @@
+{
+  "root": "libs/ui/web-inhouse",
+  "sourceRoot": "libs/ui/web-inhouse/src",
+  "projectType": "library",
+  "tags": ["scope:web-inhouse", "type:ui"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui/web-inhouse/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/web-inhouse"],
+      "options": {
+        "jestConfig": "libs/ui/web-inhouse/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

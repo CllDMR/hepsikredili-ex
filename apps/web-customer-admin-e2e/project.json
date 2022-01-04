@@ -23,6 +23,6 @@
       }
     }
   },
-  "tags": [],
+  "tags": ["scope:web-customer-admin", "type:app-e2e"],
   "implicitDependencies": ["web-customer-admin"]
 }
