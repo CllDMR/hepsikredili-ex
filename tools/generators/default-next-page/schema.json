@@ -4,14 +4,23 @@
   "$id": "default-next-page",
   "type": "object",
   "properties": {
-    "project": {
+    "appProject": {
       "type": "string",
       "description": "The project that page will be generated into.",
-      "alias": "p",
+      "alias": "aP",
       "$default": {
         "$source": "projectName"
       },
-      "x-prompt": "What is the name of the project for this page?"
+      "x-prompt": "What is the name of the app project for this page?"
+    },
+    "uiProject": {
+      "type": "string",
+      "description": "The project that page will use for ui layout.",
+      "alias": "uP",
+      "$default": {
+        "$source": "projectName"
+      },
+      "x-prompt": "What is the name of the ui project for this page?"
     },
     "name": {
       "type": "string",
@@ -23,11 +32,23 @@
       },
       "x-prompt": "What name would you like to use for the page?"
     },
+    "pageTitle": {
+      "type": "string",
+      "description": "The html-head-metatag-title of the page.",
+      "alias": "pT",
+      "x-prompt": "What name would you like to use for the html-head-metatag-title of the page?"
+    },
+    "useUILib": {
+      "type": "boolean",
+      "description": "Boolean flag for usage of UI library.",
+      "default": false,
+      "x-prompt": "Are we going to use UI library?"
+    },
     "directory": {
       "type": "string",
       "description": "Create the page under this directory (can be nested). Will be created under 'pages/'.",
       "alias": "d"
     }
   },
-  "required": ["name", "project"]
+  "required": ["name", "appProject", "pageTitle"]
 }

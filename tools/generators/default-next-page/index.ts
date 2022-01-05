@@ -5,12 +5,16 @@ import {
   installPackagesTask,
   joinPathFragments,
   names,
+  readProjectConfiguration,
   Tree,
 } from '@nrwl/devkit';
 
 interface DefaultNextPageSchemaOptions {
   name: string;
-  project: string;
+  pageTitle: string;
+  appProject: string;
+  useUILib: boolean;
+  uiProject?: string;
   directory?: string;
 }
 
@@ -18,21 +22,29 @@ export default async function (
   tree: Tree,
   schema: DefaultNextPageSchemaOptions
 ) {
-  const project = getProjects(tree).get(schema.project);
+  const appProject = readProjectConfiguration(tree, schema.appProject);
+  const uiProject = readProjectConfiguration(tree, schema.uiProject);
   const _directory = schema.directory ? `pages/${schema.directory}` : 'pages';
   const directory = await getDirectory(tree, {
     ...schema,
     directory: _directory,
   });
 
-  const componentDir = joinPathFragments(project.sourceRoot, directory);
+  const componentDir = joinPathFragments(appProject.sourceRoot, directory);
   const { className } = names(schema.name);
 
   generateFiles(
     tree, // the virtual file system
     joinPathFragments(__dirname, './files'), // path to the file templates
     componentDir,
-    { ...schema, tmpl: '', className, fileName: 'index' } // config object to replace variable in file templates
+    {
+      tmpl: '',
+      fileName: 'index',
+      appProject: schema.appProject,
+      uiProject: schema.useUILib ? uiProject.root.slice(5) : undefined,
+      className,
+      pageTitle: schema.pageTitle,
+    } // config object to replace variable in file templates
   );
   await formatFiles(tree);
   return () => {
@@ -49,7 +61,7 @@ async function getDirectory(host: Tree, schema: DefaultNextPageSchemaOptions) {
     baseDir = schema.directory;
   } else {
     baseDir =
-      workspace.get(schema.project).projectType === 'application'
+      workspace.get(schema.appProject).projectType === 'application'
         ? 'app'
         : 'lib';
   }
