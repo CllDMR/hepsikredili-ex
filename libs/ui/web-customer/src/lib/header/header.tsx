@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Button } from '@hepsikredili/ui/shared';
 import Link from 'next/link';
 import { FC } from 'react';
