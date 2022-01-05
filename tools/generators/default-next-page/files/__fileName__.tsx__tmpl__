@@ -1,13 +1,36 @@
-import { FC } from 'react';
+<% if(uiProject){ %>import { Footer, Header, Main } from '@hepsikredili/<%= uiProject %>';<% } %>  
+import { NextPage } from 'next';
+import Head from 'next/head';
 
 /* eslint-disable-next-line */
-export interface Page<%= className %>Props {
-}
+export interface Page<%= className %>Props {}
 
-export const <%= className %>: FC<Page<%= className %>Props> = (props) => (
-  <div>
-    <h1>Welcome to <%= className %>!</h1>
-  </div>
+export const <%= className %>: NextPage<Page<%= className %>Props> = () => (
+  <>
+    <Head>
+      <title><%= pageTitle %> - Hepsikredili</title>
+    </Head>
+
+<% if(uiProject){ %>
+    <Header />
+
+    <Main>
+      <h1>Welcome to <%= className %>!</h1>
+    </Main>
+
+    <Footer />
+<% } else{ %>  
+    <header>
+    </header>
+
+    <main>
+      <h1>Welcome to <%= className %>!</h1>
+    </main>
+
+    <footer>
+    </footer>
+<% } %>
+  </>
 );
 
 export default <%= className %>;

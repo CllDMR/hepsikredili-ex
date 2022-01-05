@@ -3,10 +3,9 @@ const { createGlobPatternsForDependencies } = require('@nrwl/next/tailwind');
 const { join } = require('path');
 
 module.exports = {
-  // content: createGlobPatternsForDependencies(__dirname),
   content: [
     join(__dirname, 'pages/**/*.{js,ts,jsx,tsx}'),
-    ...createGlobPatternsForDependencies(__dirname),
+    ...createGlobPatternsForDependencies(join(__dirname, 'apps/web-customer')),
   ],
   theme: {
     extend: {},
