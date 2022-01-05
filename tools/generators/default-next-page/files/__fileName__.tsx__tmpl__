@@ -4,10 +4,10 @@ import { FC } from 'react';
 export interface Page<%= className %>Props {
 }
 
-export const <%= className %>: FC<Page<%= className %>Props> = (props) => (
+export const Page<%= className %>: FC<Page<%= className %>Props> = (props) => (
   <div>
     <h1>Welcome to <%= className %>!</h1>
   </div>
 );
 
-export default <%= className %>;
+export default Page<%= className %>;

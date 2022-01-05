@@ -6,32 +6,28 @@
   "properties": {
     "project": {
       "type": "string",
-      "description": "The name of the project.",
+      "description": "The project that page will be generated into.",
       "alias": "p",
       "$default": {
         "$source": "projectName"
       },
-      "x-prompt": "What is the name of the project for this component?"
+      "x-prompt": "What is the name of the project for this page?"
     },
     "name": {
       "type": "string",
-      "description": "The name of the component.",
+      "description": "The name of the page.",
+      "alias": "n",
       "$default": {
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "What name would you like to use for the component?"
-    },
-    "title": {
-      "type": "string",
-      "description": "The title of the component.",
-      "x-prompt": "What title would you like to use for the component?"
+      "x-prompt": "What name would you like to use for the page?"
     },
     "directory": {
       "type": "string",
       "description": "Create the page under this directory (can be nested). Will be created under 'pages/'.",
-      "alias": "dir"
+      "alias": "d"
     }
   },
-  "required": ["name", "title", "project"]
+  "required": ["name", "project"]
 }

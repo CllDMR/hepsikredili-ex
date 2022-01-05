@@ -10,7 +10,6 @@ import {
 
 interface DefaultNextPageSchemaOptions {
   name: string;
-  title: string;
   project: string;
   directory?: string;
 }
